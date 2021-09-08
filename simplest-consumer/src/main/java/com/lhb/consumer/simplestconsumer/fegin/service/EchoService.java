@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
+/**
+ *  fallback = EchoServiceFallback.class需要配合sentinel才能生效，此处无法生效
+ */
 @FeignClient(name = "simplest-provider", fallback = EchoServiceFallback.class,
         configuration = FeignConfiguration.class)
 public interface EchoService {

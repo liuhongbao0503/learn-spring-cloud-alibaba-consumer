@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
+/**
+ *  fallback = EchoServiceFallback.class配置熔断降级的方法，当服务无法正常调用时，对应的方法会触发。
+ */
 @FeignClient(name = "simplest-provider", fallback = EchoServiceFallback.class,
         configuration = FeignConfiguration.class)
 public interface EchoService {
